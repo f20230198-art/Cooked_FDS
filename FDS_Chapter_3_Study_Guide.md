@@ -75,7 +75,7 @@ Check: put $x=1 \Rightarrow \mu^1(1-\mu)^0 = \mu$. Put $x=0 \Rightarrow \mu^0(1-
 
 Given $N$ independent observations with $m$ successes (i.e. $\sum x_i = m$):
 
-$$ \mu_{\text{MLE}} = \frac{m}{N} = \frac{\#\text{ of observations of } x = 1}{N} $$
+$$ \mu_{\text{MLE}} = \frac{m}{N} = \frac{\text{number of observations of } x = 1}{N} $$
 
 > **Example:** if we observe $N = 5$ tosses and $m = 3$ heads, $\mu_{\text{MLE}} = 3/5 = 0.6$.
 

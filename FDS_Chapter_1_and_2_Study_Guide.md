@@ -459,7 +459,7 @@ $$
 
 **Step 3 — Final answer:**
 
-$$ P(\text{disease} \mid +) = \frac{0.99 \times 0.005}{0.05} = 0.09 \quad \textbf{(i.e. 9%)} $$
+$$ P(\text{disease} \mid +) = \frac{0.99 \times 0.005}{0.05} = 0.09 \quad \textbf{(i.e. 9\%)} $$
 
 > Again the **base-rate lesson**: a positive result on a 99%-accurate test still gives only a **9%** chance of the disease, because the disease is very rare.
 
