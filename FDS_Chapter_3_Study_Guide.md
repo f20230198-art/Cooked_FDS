@@ -8,6 +8,8 @@
 
 # 📙 CHAPTER 3 — Probability Distributions
 
+> ⚠️ **Note from your study buddy:** every formula and worked example in this chapter has been **re-checked by direct computation**. One real error was fixed: **Example 3.20** (the dataset sums to 747, not 760 — old mean/SD/z-scores were wrong, now corrected). Everything else verified correct.
+
 ## 🧭 3.0 Read This First — The Whole Chapter in Plain Words
 
 Before any formula, here is the **entire story** of Chapter 3 in everyday language. Come back to this box whenever you feel lost.
@@ -495,28 +497,31 @@ _________/___██████___\________ z
 
 ---
 
-## 3.20 Worked Example — z-scores from a Small Data Set *(uses §3.14 + §3.19)*
+## 3.20 Worked Example — z-scores from a Small Data Set *(uses §3.14 + §3.19)* ✅ corrected
 
 **Problem:** Data **26, 33, 60, 28, 34, 33, 25, 44, 50, 36, 26, 37, 43, 62, 35, 38, 45, 32, 26, 34** — find mean & SD, then express some values as z-scores.
 
-**Step 1 — mean.** Sum $= 760$, $N = 20$:
+> 🛠️ **Note:** the old version of this example used sum = 760, mean = 38, σ ≈ 11.2. Those were **wrong** for this exact list. The 20 numbers actually sum to **747**, giving mean **37.35** and σ ≈ **10.34**. Corrected below (verified by direct computation).
 
-$$ \mu = \frac{760}{20} = 38 $$
+**Step 1 — mean.** Sum $= 747$, $N = 20$:
 
-**Step 2 — SD** (population form, §3.14): the spread works out to
+$$ \mu = \frac{747}{20} = 37.35 $$
 
-$$ \sigma \approx \mathbf{11.2} $$
+**Step 2 — SD** (population form, §3.14 — average squared distance from the mean, then square-root):
 
-**Step 3 — convert with $z = \dfrac{x-\mu}{\sigma}$** ($\mu=38$, $\sigma=11.2$):
+$$ \sigma = \sqrt{\frac{\sum (x_i - 37.35)^2}{20}} \approx \mathbf{10.34} $$
+
+**Step 3 — convert with $z = \dfrac{x-\mu}{\sigma}$** ($\mu=37.35$, $\sigma=10.34$):
 
 | Original value | Calculation | Standard score (z) |
 |---|---|---|
-| 26 | $(26-38)/11.2$ | $-1.07$ |
-| 33 | $(33-38)/11.2$ | $-0.45$ |
-| 60 | $(60-38)/11.2$ | $+1.96$ |
-| 62 | $(62-38)/11.2$ | $+2.14$ |
+| 26 | $(26-37.35)/10.34$ | $-1.10$ |
+| 33 | $(33-37.35)/10.34$ | $-0.42$ |
+| 60 | $(60-37.35)/10.34$ | $+2.19$ |
+| 62 | $(62-37.35)/10.34$ | $+2.38$ |
 
-> **Reading it:** 60 sits ≈ **2 SDs above** the mean (unusually high); 26 ≈ **1 SD below**.
+> **Reading it:** 62 sits ≈ **2.4 SDs above** the mean (genuinely unusual — past the 95% band); 26 ≈ **1 SD below**.
+> 📌 **Exam point:** the *steps* (mean → SD → $z=(x-\mu)/\sigma$) are what's graded. Always re-add the data carefully — a wrong sum poisons every z-score after it (exactly the mistake the old notes made).
 
 ---
 
