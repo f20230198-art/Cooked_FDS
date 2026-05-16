@@ -481,10 +481,14 @@ Solving $4x+2y=40$ and $2x+y=24$: from the second $y = 24-2x$; sub into the firs
 
 **Constraints:**
 
-$$ s + g \le 520 \quad(\text{land}) $$
-$$ 440s + 910g \le 50500 \quad(\text{budget}) $$
-$$ 80s + 30g \le 5800 \quad(\text{man-days}) $$
-$$ s \ge 0,\; g \ge 0 $$
+$$
+\begin{aligned}
+s + g &\le 520 &&(\text{land}) \\
+440s + 910g &\le 50500 &&(\text{budget}) \\
+80s + 30g &\le 5800 &&(\text{man-days}) \\
+s \ge 0,\; g &\ge 0
+\end{aligned}
+$$
 
 **Solve corner points** (intersection of binding constraints):
 
@@ -573,10 +577,14 @@ $$ \mathcal{L}(x, y, \lambda, \mu) = x^{2} + y^{2} + \lambda(x + y - 1) + \mu(x 
 
 **Step 2 — partial derivatives = 0:**
 
-$$ \frac{\partial \mathcal{L}}{\partial x} = 2x + \lambda + \mu = 0 \tag{1} $$
-$$ \frac{\partial \mathcal{L}}{\partial y} = 2y + \lambda - \mu = 0 \tag{2} $$
-$$ \frac{\partial \mathcal{L}}{\partial \lambda} = x + y - 1 = 0 \tag{3} $$
-$$ \frac{\partial \mathcal{L}}{\partial \mu} = x - y = 0 \tag{4} $$
+$$
+\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial x} &= 2x + \lambda + \mu = 0 \tag{1} \\
+\frac{\partial \mathcal{L}}{\partial y} &= 2y + \lambda - \mu = 0 \tag{2} \\
+\frac{\partial \mathcal{L}}{\partial \lambda} &= x + y - 1 = 0 \tag{3} \\
+\frac{\partial \mathcal{L}}{\partial \mu} &= x - y = 0 \tag{4}
+\end{aligned}
+$$
 
 **Step 3 — solve.** From (4): $x = y$. Substitute into (3): $x + x - 1 = 0 \Rightarrow 2x = 1 \Rightarrow x = y = \dfrac{1}{2}$.
 

@@ -330,9 +330,11 @@ ___/_______|________\___ x
 For a probability distribution, the **expectation (expected value)** of a function $f(x)$ is its *probability-weighted average*.
 
 **Discrete:**
+
 $$ \mathbb{E}[f] = \sum_{x} p(x)\,f(x) $$
 
 **Continuous** (density $p(x)$):
+
 $$ \mathbb{E}[f] = \int p(x)\,f(x)\,dx $$
 
 If we have a finite sample of $N$ points, the expectation is **approximated** by the sample average:

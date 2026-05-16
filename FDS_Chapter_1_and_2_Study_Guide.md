@@ -375,18 +375,23 @@ $$ P(X=0 \mid Y=1) = \frac{0.1}{0.1 + 0.3} = \frac{0.1}{0.4} = 0.25 $$
 **Find:** P(C | +) — probability of cancer given a positive test.
 
 **Step 1 — Use the formula:**
+
 $$ P(C \mid +) = \frac{P(C, +)}{P(+)} $$
 
 **Step 2 — Find P(C, +)** using the product rule  P(C,+) = P(+|C) × P(C):
+
 $$ P(C,+) = \frac{90}{100} \times \frac{1}{100} = \frac{9}{1000} $$
 
 **Step 3 — Find P(NC, +):**
+
 $$ P(NC,+) = P(+\mid NC) \times P(NC) = \frac{8}{100} \times \frac{99}{100} = \frac{792}{10000} $$
 
 **Step 4 — Find P(+)** by summing over all ways a positive test can happen:
+
 $$ P(+) = P(C,+) + P(NC,+) = \frac{9}{1000} + \frac{792}{10000} $$
 
 **Step 5 — Final answer:**
+
 $$ P(C \mid +) = \frac{\frac{9}{1000}}{\frac{9}{1000} + \frac{792}{10000}} \approx 0.1 $$
 
 > **Key insight:** Even though the test is 90% accurate for cancer patients, because cancer itself is rare (1%), a positive test only means ~**10%** chance of actually having cancer. This is the famous **base-rate effect** and is the whole motivation for Bayes' theorem.
@@ -422,6 +427,7 @@ $$ P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B \mid A)P(A) + P(B \mid \neg A)P(\n
 - P(A | B) = ?
 
 **Apply Bayes:**
+
 $$ P(A \mid B) = \frac{P(B \mid A) \times P(A)}{P(B)} = \frac{0.07 \times 0.10}{0.05} = 0.14 $$
 
 **Answer:** If the patient is an alcoholic, his chance of having liver disease is **0.14 (14%)**.
@@ -433,6 +439,7 @@ $$ P(A \mid B) = \frac{P(B \mid A) \times P(A)}{P(B)} = \frac{0.07 \times 0.10}{
 > A disease occurs in **0.5%** of the population. A test is positive in **99%** of people **with** the disease, and **5%** of people **without** it (false positive). A person tests positive — what's the probability they have the disease?
 
 **Step 1 — Bayes' formula:**
+
 $$ P(\text{disease} \mid +) = \frac{P(+ \mid \text{disease}) \times P(\text{disease})}{P(+)} $$
 
 **Known:**
@@ -441,10 +448,17 @@ $$ P(\text{disease} \mid +) = \frac{P(+ \mid \text{disease}) \times P(\text{dise
 - P(+) = ??? (must compute)
 
 **Step 2 — Compute P(+) via law of total probability:**
-$$ P(+) = P(+\mid D)\,P(D) + P(+\mid \sim D)\,P(\sim D) $$
-$$ = (0.99 \times 0.005) + (0.05 \times 0.995) = 0.00495 + 0.04975 \approx 0.05 $$
+
+$$
+\begin{aligned}
+P(+) &= P(+\mid D)\,P(D) + P(+\mid \sim D)\,P(\sim D) \\
+     &= (0.99 \times 0.005) + (0.05 \times 0.995) \\
+     &= 0.00495 + 0.04975 \approx 0.05
+\end{aligned}
+$$
 
 **Step 3 — Final answer:**
+
 $$ P(\text{disease} \mid +) = \frac{0.99 \times 0.005}{0.05} = 0.09 \quad \textbf{(i.e. 9%)} $$
 
 > Again the **base-rate lesson**: a positive result on a 99%-accurate test still gives only a **9%** chance of the disease, because the disease is very rare.
@@ -526,9 +540,11 @@ $$ P(A=fair \mid B=Heads) = \frac{P(B=Heads \mid A=fair) \times P(A=fair)}{P(B=H
 - P(B = Heads | A = unfair) = 1 (unfair coin is always Heads)
 
 **Compute the evidence P(B = Heads)** using total probability:
+
 $$ P(B=Heads) = P(B|A)P(A) + P(B|\bar{A})P(\bar{A}) = (0.5 \times 0.99) + (1 \times 0.01) = 0.5050 $$
 
 **Posterior:**
+
 $$ P(A=fair \mid B=Heads) = \frac{0.5 \times 0.99}{0.5050} = \mathbf{0.9802} $$
 
 So after one Heads, belief that the coin is fair drops slightly: 0.99 → **0.9802**.
@@ -540,9 +556,11 @@ So after one Heads, belief that the coin is fair drops slightly: 0.99 → **0.98
 **New prior:** P(A = fair) = 0.9802  → so P(A = unfair) = 1 − 0.9802 = 0.0198
 
 **New evidence:**
+
 $$ P(B=H) = P(B|A)P(A) + P(B|\bar A)P(\bar A) = (0.5 \times 0.9802) + (1 \times 0.0198) = 0.5099 $$
 
 **New posterior:**
+
 $$ P(A=fair \mid B=H) = \frac{0.5 \times 0.9802}{0.5099} = \mathbf{0.9612} $$
 
 **Pattern:** Each consecutive Heads makes us **less confident** the coin is fair (0.99 → 0.9802 → 0.9612 → …). This is **Bayesian updating** — belief is revised step by step as evidence accumulates.
